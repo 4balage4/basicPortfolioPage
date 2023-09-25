@@ -1,15 +1,21 @@
 * {
-  margin: 0;
+  margin: 0px;
   padding: 0px;
   /* font-family: ; */
   font-family: 'Roboto', sans-serif;
   font-family: 'Ubuntu Mono', monospace;
+  color: #013c5b;
 }
 
 body {
-  background-color: #EEE9DA;
-  /* opacity: 1; */
-  /* background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #EEE9DA 4px ), repeating-linear-gradient( #6096B455, #6096B4 ); */
+  /* background-color: #EEE9DA; */
+  background-image: radial-gradient(#ead7b2 1px, transparent 1px), radial-gradient(#ead7b2 1px, transparent 1px);
+background-size: 13px 13px;
+background-position: 0 0, 6.5px 6.5px;
+background-color: #eee9da;
+
+/* padding-top: 50px; */
+
 }
 
 /* /////////////////////// */
@@ -19,10 +25,10 @@ body {
 
 .navbar {
   display: flex;
-  max-height: 150px;
+  max-height: 50px;
   justify-content: space-between;
   background-color: #93BFCF;
-  position: fixed;
+  position: sticky;
   width: 100%;
 }
 
@@ -41,6 +47,7 @@ nav img {
   max-height: 50px;
   width: auto;
   margin-left: 3em;
+  object-fit: contain;
 }
 
 .menu {
@@ -73,11 +80,14 @@ li {
   display: flex;
   justify-content: left;
   align-items: end;
+  /* remove end and .banner-text margin bottom and uncomment align center. */
+  /* align-items:center; */
   margin: 0em 15rem;
-  height: 100vh;
+  min-height: 100vh;
   margin-bottom: 0px;
   font-size: 2.5rem;
   word-spacing: -7.5px;
+
   /* padding-bottom: 3em; */
 }
 
@@ -98,9 +108,10 @@ li {
   color: #6096B4;
 }
 
-.banner-element {
-  /*  */
-}
+/* .banner-element {
+  color: gray;
+  font-size: 0.5em;
+} */
 
 /* /////////////////////// */
 /* MAIN SECTION */
@@ -110,31 +121,243 @@ main {
 }
 
 section {
-  height: 100vh;
+  min-height: calc(100vh - 50px);
+  margin-bottom: 2em;
 }
 
-/* About me */
-.introduction {
-  border: 2px solid red;
+.title h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+  text-align: center;
+  color: black;
+  text-decoration-color: #952323;
+  margin-bottom: 1em;
 }
+
+/* /////////////////////// */
+/* ABOUT ME */
+/* /////////////////////// */
+
+
+.about-me-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-me-text {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  padding: 3em 0 3em 1.5em;
+}
+
+.about-me-text h2 {
+  color: #013c5b;
+  text-decoration: none;
+  padding: 1em;
+}
+
+.about-me-text p {
+  padding-left: 1em;
+  border-left: #952323 solid medium;
+
+}
+
 
 
 .profile-pic img {
-  height: 400px;
+  border-radius: 50%;
+  height: 500px;
   width: auto;
+  margin-right: 2em;
 
 }
 
-/* tech stack */
-.tech-stack {
+/* /////////////////////// */
+/* TECH STACK */
+/* /////////////////////// */
+
+
+.tech-stack-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.stack-container {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  flex-direction: column;
+  min-width: 40%;
+}
+
+.stack-container li {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: #ead7b2 1px solid;
+  transition: 200ms linear;
+  margin: 2px 0 2px 0;
+}
+
+.stack-container a {
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+.stack-container li:hover {
+  font-size: 1.5em;
+  color: #952323;
+  border: #952323 1px solid;
+  border-radius: 5px;
+}
+
+.tech-stack-container img {
+  max-height: 400px;
+  width: auto;
+  border-radius: 10px;
+  /* box-shadow: 4px 4px black; */
+}
+
+/* /////////////////////// */
+/* PROJECTS */
+/* /////////////////////// */
+
+.big-project {
+  display: flex;
+  justify-content: baseline;
+  margin-bottom: 2em;
+  padding: 1em;
+  transition: 250ms linear 300ms;
+  /* flex-wrap: wrap; */
+}
+
+.big-project:hover {
+  box-shadow: #BDCDD6;
+  background-color: #BDCDD6;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+.margin {
+  margin-right: 2em;
+}
+
+.big-project img {
+  max-width: 30%;
+  height: auto;
+  border:#952323 solid 2px;
+  border-radius: 5px;
+}
+
+.project.text {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  padding: 3em 0 3em 1.5em;
+}
+
+.project-text h3 {
+  font-size: 2em;
+  text-decoration: none;
+  padding: 0.25em 1em 0.5em;
+}
+
+.project-text p {
+  padding-left: 1em;
+  border-left: #952323 solid medium;
+
 }
 
 
-/* projects */
-.projects {
+.small-project-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 1em;
+}
+
+.small-project {
+  border: #952323 solid 1px;
+  box-shadow: #952323 3px 3px;
+  transition: 200ms linear;
+  border-radius: 5px;
+}
+
+.small-project:hover {
+  background-color: #BDCDD6;
+  cursor: pointer;
+}
+
+.small-project h3 {
+  padding: 1em 0;
+  text-decoration: underline;
+  text-decoration-color: #952323;
+}
+
+.small-project ul {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.small-project li {
+  padding: 1em 0.5em;
+}
+
+/* /////////////////////// */
+/* BLOG */
+/* /////////////////////// */
+.blog-entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30em;
 
 }
 
+.blog h4 {
+  width: 100%;
+  border: #952323 solid 1px;
+}
+
+
+/* /////////////////////// */
+/* CONTACT */
+/* /////////////////////// */
+
+input {
+  width: 100%;
+  height: 2em;
+  margin: 0.25rem 0;
+}
+
+.input {
+  display: grid;
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+
+.cv {
+  padding: 0.25em;
+  font-size: 1em;
+  text-align: center;
+}
+
+label {
+  margin: 0.25rem 0;
+}
 
 
 /* /////////////////////// */
@@ -151,9 +374,57 @@ footer {
 
 
 
+/* BUTTONS */
+
+.projects-button {
+  padding: 0.75em;
+  border-radius: 5px;
+}
+
+.projects-button:hover {
+  color:#952323;
+  border-color: #952323;
+}
+
+.form-button {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.form-button button {
+  width: 25%;
+  margin-top: 2.5em;
+  padding: 0.75em;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-bottom: 2.5em;
+}
+
+.form-button button:hover  {
+  color: #952323;
+  border: #952323 solid 2px;
+}
+
+
+
 /* Media queries */
 
 /* have a tablet one
 have one for phone */
 
 /* make the main margin em lower on smaller screens */
+
+
+/* just to give more space */
+/* .stack-container {
+  margin-bottom: 2em;
+} */
+
+/* .bit-project
+flex-wrap:/
+
+
+/* .margin {
+  visibility: hidden;
+ } */
