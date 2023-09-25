@@ -1,10 +1,15 @@
 * {
   margin: 0;
   padding: 0px;
+  /* font-family: ; */
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
-html {
-  background-color: antiquewhite;
+body {
+  background-color: #EEE9DA;
+  /* opacity: 1; */
+  /* background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #EEE9DA 4px ), repeating-linear-gradient( #6096B455, #6096B4 ); */
 }
 
 /* /////////////////////// */
@@ -16,7 +21,9 @@ html {
   display: flex;
   max-height: 150px;
   justify-content: space-between;
-  background-color: gray;
+  background-color: #93BFCF;
+  position: fixed;
+  width: 100%;
 }
 
 /* this is neccesary if I want to add my name to the logo */
@@ -31,7 +38,7 @@ html {
 } */
 
 nav img {
-  max-height: 75px;
+  max-height: 50px;
   width: auto;
   margin-left: 3em;
 }
@@ -49,18 +56,61 @@ li {
 .menu li a, .menu li p {
   text-decoration: none;
   font-size: 1.5em;
-  padding-left: 0.75rem;
+  padding: 0.75rem;
+  color: #000;
+}
+
+.menu li a:hover, .menu li p:hover {
+  font-size: calc(1.5em - 1px);
+  color: #952323;
+  transition: 200ms;
+  border: #952323 1px solid;
+  border-radius: 5px;
+}
+
+/* BANNER */
+.banner {
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  margin: 0em 15rem;
+  height: 100vh;
+  margin-bottom: 0px;
+  font-size: 2.5rem;
+  word-spacing: -7.5px;
+  /* padding-bottom: 3em; */
+}
+
+.banner-text {
+  margin-bottom: 5em;
+}
+
+.banner h1 {
+  color: #952323;
+}
+
+.banner p {
+  color: #93BFCF;
+  font-size: 1.5rem;
+}
+
+.banner h4 {
+  color: #6096B4;
+}
+
+.banner-element {
+  /*  */
 }
 
 /* /////////////////////// */
 /* MAIN SECTION */
 /* /////////////////////// */
 main {
-  margin: 0 15em;
+  margin: 0 15rem;
 }
 
 section {
-  margin-bottom: 5em;
+  height: 100vh;
 }
 
 /* About me */
@@ -77,13 +127,12 @@ section {
 
 /* tech stack */
 .tech-stack {
-  border: 2px solid red;
 }
 
 
 /* projects */
 .projects {
-  border: 2px solid red;
+
 }
 
 
@@ -94,7 +143,7 @@ section {
 
 footer {
   display: flex;
-  background-color: gray;
+  background-color: #6096B4;
   height: 50px;
   justify-content: center;
   align-items: center;
