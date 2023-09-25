@@ -1,11 +1,16 @@
 * {
   margin: 0;
-  font-size: 16px;
   padding: 0px;
 }
 
+html {
+  background-color: antiquewhite;
+}
 
+/* /////////////////////// */
 /* HEADER */
+/* /////////////////////// */
+
 
 .navbar {
   display: flex;
@@ -41,8 +46,65 @@ li {
   list-style-type: none;
 }
 
-li a, li p {
+.menu li a, .menu li p {
   text-decoration: none;
   font-size: 1.5em;
   padding-left: 0.75rem;
 }
+
+/* /////////////////////// */
+/* MAIN SECTION */
+/* /////////////////////// */
+main {
+  margin: 0 15em;
+}
+
+section {
+  margin-bottom: 5em;
+}
+
+/* About me */
+.introduction {
+  border: 2px solid red;
+}
+
+
+.profile-pic img {
+  height: 400px;
+  width: auto;
+
+}
+
+/* tech stack */
+.tech-stack {
+  border: 2px solid red;
+}
+
+
+/* projects */
+.projects {
+  border: 2px solid red;
+}
+
+
+
+/* /////////////////////// */
+/* FOOTER */
+/* /////////////////////// */
+
+footer {
+  display: flex;
+  background-color: gray;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Media queries */
+
+/* have a tablet one
+have one for phone */
+
+/* make the main margin em lower on smaller screens */
