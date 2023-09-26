@@ -1,33 +1,53 @@
+:root {
+  --primary-color: #013c5b;
+  --secondary-color: #952323;;
+  --third-color: #93BFCF;
+  --fourth-color: #BDCDD6;
+  --footer-color: #6096B4;
+  --button-color: #93BFCF;
+}
+
+.darkmode {
+  --primary-color: #DDDDDD;
+  --secondary-color: #F05454;
+  --third-color: #30475E;
+  --fourth-color: #222831;
+  --footer-color: #363738;
+  --button-color: #F05454;
+
+  background-image: radial-gradient(#323438 1px, transparent 1px), radial-gradient(#222831 1px, transparent 1px);
+  background-size: 13px 13px;
+  background-position: 0 0, 6.5px 6.5px;
+  background-color: #222831;
+}
+
+
 * {
   margin: 0px;
   padding: 0px;
-  /* font-family: ; */
   font-family: 'Roboto', sans-serif;
   font-family: 'Ubuntu Mono', monospace;
-  color: #013c5b;
+  color: var(--primary-color);
 }
 
 body {
-  /* background-color: #EEE9DA; */
   background-image: radial-gradient(#ead7b2 1px, transparent 1px), radial-gradient(#ead7b2 1px, transparent 1px);
-background-size: 13px 13px;
-background-position: 0 0, 6.5px 6.5px;
-background-color: #eee9da;
-
-/* padding-top: 50px; */
+  background-size: 13px 13px;
+  background-position: 0 0, 6.5px 6.5px;
+  background-color: #eee9da;
 
 }
 
-/* /////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
 /* HEADER */
-/* /////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 
 .navbar {
   display: flex;
   max-height: 50px;
   justify-content: space-between;
-  background-color: #93BFCF;
+  background-color: var(--third-color);
   position: sticky;
   width: 100%;
 }
@@ -60,22 +80,35 @@ li {
   list-style-type: none;
 }
 
-.menu li a, .menu li p {
+.menu li a, .menu li i {
+  cursor: pointer;
   text-decoration: none;
   font-size: 1.5em;
   padding: 0.75rem;
-  color: #000;
+  color: var(--primary-color);
 }
 
-.menu li a:hover, .menu li p:hover {
-  font-size: calc(1.5em - 1px);
-  color: #952323;
-  transition: 200ms;
-  border: #952323 1px solid;
+.menu li a:hover, .menu li i:hover {
+  color: var(--secondary-color);
+  transition: 300ms linear;
   border-radius: 5px;
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color);
 }
 
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* Light-Dark mode */
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* #toggle {
+  transition: 1300ms linear;
+} */
+
+
+/* /////////////////////////////////////////////////////////////////////////////// */
 /* BANNER */
+/* ///////////////////////////////////////////////////////////////////////////// */
+
 .banner {
   display: flex;
   justify-content: left;
@@ -96,16 +129,16 @@ li {
 }
 
 .banner h1 {
-  color: #952323;
+  color: var(--secondary-color);
 }
 
 .banner p {
-  color: #93BFCF;
+  color: var(--third-color);
   font-size: 1.5rem;
 }
 
 .banner h4 {
-  color: #6096B4;
+  color: var(--primary-color);
 }
 
 /* .banner-element {
@@ -113,9 +146,9 @@ li {
   font-size: 0.5em;
 } */
 
-/* /////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 /* MAIN SECTION */
-/* /////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 main {
   margin: 0 15rem;
 }
@@ -129,14 +162,14 @@ section {
   font-size: 2rem;
   text-decoration: underline;
   text-align: center;
-  color: black;
-  text-decoration-color: #952323;
+  color: var(--primary-color);
+  text-decoration-color: var(--secondary-color);
   margin-bottom: 1em;
 }
 
-/* /////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
 /* ABOUT ME */
-/* /////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
 
 
 .about-me-container {
@@ -155,14 +188,14 @@ section {
 }
 
 .about-me-text h2 {
-  color: #013c5b;
+  color: var(--primary-color);
   text-decoration: none;
   padding: 1em;
 }
 
 .about-me-text p {
   padding-left: 1em;
-  border-left: #952323 solid medium;
+  border-left:var(--secondary-color) solid medium;
 
 }
 
@@ -176,9 +209,9 @@ section {
 
 }
 
-/* /////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////// */
 /* TECH STACK */
-/* /////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////// */
 
 
 .tech-stack-container{
@@ -204,6 +237,7 @@ section {
   border: #ead7b2 1px solid;
   transition: 200ms linear;
   margin: 2px 0 2px 0;
+  border-radius: 5px;
 }
 
 .stack-container a {
@@ -213,8 +247,8 @@ section {
 
 .stack-container li:hover {
   font-size: 1.5em;
-  color: #952323;
-  border: #952323 1px solid;
+  color: var(--secondary-color);
+  border: var(--secondary-color) 1px solid;
   border-radius: 5px;
 }
 
@@ -225,9 +259,9 @@ section {
   /* box-shadow: 4px 4px black; */
 }
 
-/* /////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
 /* PROJECTS */
-/* /////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
 
 .big-project {
   display: flex;
@@ -239,8 +273,8 @@ section {
 }
 
 .big-project:hover {
-  box-shadow: #BDCDD6;
-  background-color: #BDCDD6;
+  box-shadow: var(--fourth-color);
+  background-color: var(--third-color);
   cursor: pointer;
   border-radius: 10px;
 
@@ -253,7 +287,7 @@ section {
 .big-project img {
   max-width: 30%;
   height: auto;
-  border:#952323 solid 2px;
+  border:var(--secondary-color) solid 2px;
   border-radius: 5px;
 }
 
@@ -273,7 +307,7 @@ section {
 
 .project-text p {
   padding-left: 1em;
-  border-left: #952323 solid medium;
+  border-left: var(--secondary-color) solid medium;
 
 }
 
@@ -288,21 +322,21 @@ section {
 }
 
 .small-project {
-  border: #952323 solid 1px;
-  box-shadow: #952323 3px 3px;
+  border: var(--secondary-color) solid 1px;
+  box-shadow: var(--secondary-color) 3px 3px;
   transition: 200ms linear;
   border-radius: 5px;
 }
 
 .small-project:hover {
-  background-color: #BDCDD6;
+  background-color: var(--third-color);
   cursor: pointer;
 }
 
 .small-project h3 {
   padding: 1em 0;
   text-decoration: underline;
-  text-decoration-color: #952323;
+  text-decoration-color: var(--secondary-color);
 }
 
 .small-project ul {
@@ -315,9 +349,9 @@ section {
   padding: 1em 0.5em;
 }
 
-/* /////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 /* BLOG */
-/* /////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
 .blog-entry {
   display: flex;
   flex-direction: column;
@@ -328,13 +362,13 @@ section {
 
 .blog h4 {
   width: 100%;
-  border: #952323 solid 1px;
+  border: var(--secondary-color) solid 1px;
 }
 
 
-/* /////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
 /* CONTACT */
-/* /////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
 
 input {
   width: 100%;
@@ -360,31 +394,34 @@ label {
 }
 
 
-/* /////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
 /* FOOTER */
-/* /////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
 
 footer {
   display: flex;
-  background-color: #6096B4;
+  background-color: var(--footer-color);
   height: 50px;
   justify-content: center;
   align-items: center;
 }
 
 
-
+/* //////////////////////////////////////////////////////////////////////// */
 /* BUTTONS */
-
+/* //////////////////////////////////////////////////////////////////////// */
 .projects-button {
   padding: 0.75em;
   border-radius: 5px;
+  background-color: var(--button-color);
 }
 
 .projects-button:hover {
-  color:#952323;
-  border-color: #952323;
+  cursor: pointer;
+  color:var(--primary-color);
+  border-color: var(--secondary-color);
 }
+
 
 .form-button {
 display: flex;
@@ -393,22 +430,26 @@ align-items: center;
 }
 
 .form-button button {
+  background-color: var(--button-color);
   width: 25%;
   margin-top: 2.5em;
   padding: 0.75em;
   border-radius: 5px;
   font-size: 1em;
   margin-bottom: 2.5em;
+  cursor: pointer;
 }
 
 .form-button button:hover  {
-  color: #952323;
-  border: #952323 solid 2px;
+  color: var(--primary-color);
+  border: var(--secondary-color) solid 2px;
 }
 
 
-
+/* //////////////////////////////////////////////////////////////////////// */
 /* Media queries */
+/* //////////////////////////////////////////////////////////////////////// */
+
 
 /* have a tablet one
 have one for phone */
