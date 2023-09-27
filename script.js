@@ -21,3 +21,19 @@ toggle.addEventListener('click', function() {
     body.style.transition = '1250ms';
   }
 });
+
+
+// ///////////////////////////////
+// Back to top button
+// //////////////////////////////
+
+const button = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', function() {
+  if(this.window.scrollY > 120) {
+    button.classList.add('active');
+    console.log(button.classList);
+  } else {
+    button.classList.remove('active');
+  }
+})
