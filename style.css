@@ -30,14 +30,20 @@
   color: var(--primary-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: radial-gradient(#ead7b2 1px, transparent 1px), radial-gradient(#ead7b2 1px, transparent 1px);
   background-size: 13px 13px;
   background-position: 0 0, 6.5px 6.5px;
   background-color: #eee9da;
-
 }
 
+li {
+  list-style-type: none;
+}
 /* /////////////////////////////////////////////////////////////////////////// */
 /* HEADER */
 /* ////////////////////////////////////////////////////////////////////////// */
@@ -71,13 +77,19 @@ nav img {
 }
 
 .menu {
+  min-width: 50%;
   display: flex;
   margin-right: 3em;
+  justify-content: end;
   align-items: center;
 }
 
-li {
-  list-style-type: none;
+.menu li {
+  transition: transform 400ms ease-in-out;
+}
+
+.menu li:hover {
+  transform: translateY(-15%);
 }
 
 .menu li a, .menu li i {
@@ -86,15 +98,16 @@ li {
   font-size: 1.5em;
   padding: 0.75rem;
   color: var(--primary-color);
+  transition: 300ms linear;
 }
 
 .menu li a:hover, .menu li i:hover {
   color: var(--secondary-color);
-  transition: 300ms linear;
   border-radius: 5px;
   text-decoration: underline;
   text-decoration-color: var(--secondary-color);
 }
+
 
 
 /* ///////////////////////////////////////////////////////////////////////////// */
@@ -183,7 +196,6 @@ section {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  align-items: start;
   padding: 3em 0 3em .5em;
 }
 
@@ -191,6 +203,7 @@ section {
   color: var(--primary-color);
   text-decoration: none;
   padding: 1em;
+  text-align: left;
 }
 
 .about-me-text p {
@@ -200,18 +213,25 @@ section {
 }
 
 .icons-container {
-  width: inherit;
-  text-align: center;
-
+  width: 100%;
+  min-height: 3.5em;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.icons-container i {
-
+.icons-container a {
+  font-size: 2em;
+  padding: 1em;
+  transition: transform 400ms ease-in-out;
 }
 
+.icons-container a i:hover {
+  color: var(--secondary-color);
+}
 
+.icons-container a:hover {
+  transform: translateY(-5%);
+}
 
 .profile-pic img {
   border-radius: 50%;
@@ -230,7 +250,6 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-
 }
 
 .stack-container {
@@ -255,6 +274,8 @@ section {
   /* transition: 300ms linear; */
   margin: 2px 0 2px 0;
   border-radius: 5px;
+  transition: transform 400ms linear,
+    font-size 200ms linear;
 }
 
 .stack-container li i {
@@ -268,6 +289,8 @@ section {
   color: var(--secondary-color);
   /* border: var(--secondary-color) solid; */
   border-radius: 5px;
+  transform: translateY(-5%);
+  font-size: 1.75em;
 }
 
 .tech-stack-container img {
@@ -286,7 +309,7 @@ section {
   justify-content: baseline;
   margin-bottom: 2em;
   padding: 1em;
-  transition: 250ms linear 300ms;
+  transition: 250ms linear 150ms;
   /* flex-wrap: wrap; */
 }
 
@@ -463,6 +486,31 @@ align-items: center;
   border: var(--secondary-color) solid 2px;
 }
 
+
+/* //////////////////////////////////////////////////////////////////////// */
+/* Up button */
+/* //////////////////////////////////////////////////////////////////////// */
+/* have it on the right side and not in the em */
+.back-to-top {
+  color: var(--primary-color);
+  position: fixed;
+  right: 2.5%;
+  top: 87%;
+  font-size: 3em;
+  opacity: 0;
+  transition: all 400ms;
+  pointer-events: none;
+}
+
+.back-to-top.active {
+  color: var(--primary-color);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.back-to-top.active:hover {
+  color: var(--secondary-color);
+}
 
 /* //////////////////////////////////////////////////////////////////////// */
 /* Media queries */

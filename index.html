@@ -16,7 +16,7 @@
 
   <!-- HEADER -->
 
-  <header>
+  <header id="header">
     <nav class="navbar">
       <div class="logo">
         <img src="resources/B-logos_black-bigbig.png" alt="logo">
@@ -30,17 +30,20 @@
         <li><i class="bi bi-moon" id="toggleButton"></i></li>
       </ul>
     </nav>
-    <section class="banner">
-    <div class="banner-text">
-      <p>hi, I am</p>
-      <h1>Balázs Burián</h1>
-      <h4>web developer from Europe living in Nairobi, Kenya</h4>
-      <a href="#projects-section"><button class="projects-button"  >Projects</button></a>
-    </div>
-  </section>
- <!-- MAIN -->
+    <section class="banner" id="banner">
+      <div class="banner-text">
+        <p>hi, I am</p>
+        <h1>Balázs Burián</h1>
+        <h4>web developer from Europe living in Nairobi, Kenya</h4>
+        <a href="#projects-section"><button class="projects-button"  >Projects</button></a>
+      </div>
+    </section>
+    <!-- MAIN -->
 
   </header>
+  <div class="back-to-top">
+  <a href="#header""><i class="bi bi-arrow-up-square"></i></a>
+  </div>
   <main class="container">
     <section class="about-me title">
       <h2 class="s">About me</h2>
@@ -53,9 +56,9 @@
           <h4></h4>
           <p>Lorem ipsum dolor sit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis excepturi aperiam laboriosam nostrum quo, sunt provident deserunt eaque facere a, rem sed, error quasi magnam quis at dolorem et! Velit! amet consectetur adipisicing elit. Sequi natus optio quo ea eaque a eum, nemo id minus saepe incidunt sint quos ut enim cumque vero nesciunt maiores voluptatem.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa aperiam facere aut, explicabo officiis quasi sed suscipit magnam deleniti illo ea recusandae dolor incidunt libero sit ullam debitis voluptatem esse.</p>
           <div class="icons-container">
-            <a href="#"><i class="bi bi-github"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="https://github.com/4balage4" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/balazs-burian/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/Balage4" target="_blank"><i class="bi bi-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -63,19 +66,20 @@
     <section class="tech-stack title">
       <h2>Technologies I worked with</h2>
       <div class="tech-stack-container">
-      <ul class="stack-container">
-        <li><i class="fa-brands fa-js"></i>Ruby on Rails</li>
-        <li><i class="fa-brands fa-css3"></i>Css</li>
-        <li><i class="fa-brands fa-js"></i>Javascript</li>
-        <li><i class="fa-brands fa-html5"></i>HTML</li>
-        <li><i class="fa-solid fa-database"></i>Sql</li>
-        <li><i class="fa-brands fa-node-js"></i>Node.js</li>
-        <li><i class="fa-brands fa-react"></i>React</li>
-        <li><i class="fa-brands fa-python"></i>Python</li>
+        <ul class="stack-container">
+          <li><i class="fa-brands fa-js"></i>Ruby on Rails</li>
+          <li><i class="fa-brands fa-css3"></i>Css</li>
+          <li><i class="fa-brands fa-js"></i>Javascript</li>
+          <li><i class="fa-brands fa-html5"></i>HTML</li>
+          <li><i class="fa-solid fa-database"></i>Sql</li>
+          <li><i class="fa-brands fa-node-js"></i>Node.js **</li>
+        <li><i class="fa-brands fa-react"></i>React **</li>
+        <li><i class="fa-brands fa-python"></i>Python **</li>
       </ul>
       <img src="./resources/default_certificate.jpg" alt="certificate">
     </div>
     <p>* click for the certificate</p>
+    <p>** currently studying</p>
     </section>
     <!-- <section class="work-experience">
       <h2>Work Experience</h2> -->
