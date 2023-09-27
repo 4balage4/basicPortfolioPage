@@ -7,28 +7,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/9c35b5ee55.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   </head>
 <body>
 
   <!-- HEADER -->
-
+<div class="container">
   <header id="header">
-    <nav class="navbar">
+    <nav class="navbar ">
       <div class="logo">
-        <img src="resources/B-logos_black-bigbig.png" alt="logo">
-        <!-- <h2>Balázs Burián</h2> -->
+        <a href="#header"><img id="logo-small" src="./resources/small-logo-dark.png">
+        <img id="logo" src="resources/dark_logo.png" alt="logo">
+      </a>
       </div>
-      <ul class="menu">
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
+      <a class="toggle-button">
+        <!-- these are the toggle button bars -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="menu">
+      <ul>
+        <li><a href="#about-me">About me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><i class="bi bi-moon" id="toggleButton"></i></li>
       </ul>
+    </div>
     </nav>
     <section class="banner" id="banner">
       <div class="banner-text">
@@ -39,13 +48,13 @@
       </div>
     </section>
     <!-- MAIN -->
+    <div class="back-to-top">
+    <a href="#header""><i class="bi bi-arrow-up-square"></i></a>
+    </div>
 
   </header>
-  <div class="back-to-top">
-  <a href="#header""><i class="bi bi-arrow-up-square"></i></a>
-  </div>
-  <main class="container">
-    <section class="about-me title">
+  <main>
+    <section class="about-me title" id="about-me">
       <h2 class="s">About me</h2>
       <div class="about-me-container">
         <div class="profile-pic">
@@ -63,7 +72,7 @@
         </div>
       </div>
     </section>
-    <section class="tech-stack title">
+    <section class="tech-stack title" id="tech-stack">
       <h2>Technologies I worked with</h2>
       <div class="tech-stack-container">
         <ul class="stack-container">
@@ -85,10 +94,10 @@
       <h2>Work Experience</h2> -->
 <!-- This part needs to be worked on -->
     </section>
-    <section class="projects title">
+    <section class="projects title" id="projects">
       <h2 id="projects-section">Main Projects</h2>
       <div class="big-project">
-        <img src="./resources/B-logos_black.png" alt="">
+        <img src="resources/default_certificate.jpg" alt="">
         <div class="margin"></div>
         <div class="project-text">
           <h3> 50-50: Take the fair share </h3>
@@ -101,7 +110,7 @@
           <p>Lorem ipsum dolor sit amet consectetur, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quidem maxime recusandae facilis placeat earum corporis sed harum laborum dicta animi, rerum facere sint quo officiis magnam, ipsum vel commodi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique corporis sit ullam repellat sint temporibus? Tenetur veniam qui ullam placeat eos distinctio totam? Excepturi, repudiandae harum perferendis libero consectetur temporibus? adipisicing elit. Assumenda repellendus quam reiciendis dolores quaerat dolor deleniti nihil ab magnam suscipit, unde earum aspernatur illum numquam amet similique iste nostrum minima.</p>
         </div>
         <div class="margin"></div>
-        <img src="./resources/B-logos_black.png" alt="">
+        <img src="resources/default_certificate.jpg" alt="">
       </div>
     </section>
       <section class="side-projects title">
@@ -158,14 +167,14 @@
         </div>
       </div>
     </section>
-    <section class="blog title">
+    <section class="blog title" id="blog">
       <h2>blog</h2>
       <div class="blog-entry">
         <h4>Under Construction...</h4>
         <h4>Come back later...</h4>
       </div>
     </section>
-    <section class="contact title">
+    <section class="contact title" id="contact">
       <h2>Contact me</h2>
       <div class="contact-form">
         <form action="#" method="POST">
@@ -195,6 +204,6 @@
   <footer>
     <p>Designed by Balazs in 2023</p>
   </footer>
-
+</div>
 </body>
 </html>

@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+
 }
 
 body {
@@ -39,6 +40,15 @@ body {
   background-size: 13px 13px;
   background-position: 0 0, 6.5px 6.5px;
   background-color: #eee9da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container {
+  max-width: 2000px;
+  width:100%;
 }
 
 li {
@@ -48,16 +58,23 @@ li {
 /* HEADER */
 /* ////////////////////////////////////////////////////////////////////////// */
 
-
 .navbar {
   display: flex;
+  position: fixed;
   max-height: 50px;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--third-color);
-  position: sticky;
   width: 100%;
+  max-width: 2000px;
+  opacity: 1;
+  transition: background-color 400ms;
+
 }
 
+.navbar.after {
+  opacity: 0.75;
+}
 /* this is neccesary if I want to add my name to the logo */
 /*
 .logo {
@@ -69,14 +86,29 @@ li {
   font-size: 2rem;
 } */
 
-nav img {
+.logo {
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
   max-height: 50px;
   width: auto;
   margin-left: 3em;
   object-fit: contain;
 }
 
-.menu {
+nav.logo a {
+  max-width: 50px;
+}
+
+#logo-small {
+  display: none;
+}
+
+.menu ul {
   min-width: 50%;
   display: flex;
   margin-right: 3em;
@@ -95,6 +127,7 @@ nav img {
 .menu li a, .menu li i {
   cursor: pointer;
   text-decoration: none;
+  text-transform: lowercase;
   font-size: 1.5em;
   padding: 0.75rem;
   color: var(--primary-color);
@@ -104,18 +137,34 @@ nav img {
 .menu li a:hover, .menu li i:hover {
   color: var(--secondary-color);
   border-radius: 5px;
-  text-decoration: underline;
-  text-decoration-color: var(--secondary-color);
+  /* text-decoration: underline; */
+  /* text-decoration-color: var(--secondary-color); */
 }
 
+/* //////////////////////////////////////////////////////////////////////////////////// */
+/* TOGGLE BUTTON FOR THE TABLET/MOBILE SCREENS */
+/* //////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* ///////////////////////////////////////////////////////////////////////////// */
-/* Light-Dark mode */
-/* ///////////////////////////////////////////////////////////////////////////// */
-/* #toggle {
-  transition: 1300ms linear;
-} */
+.toggle-button {
+  position: absolute;
+  right: 2em;
+  top: 0.75em;
+  align-items: right;
+  margin-right: 2.5em;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
 
 
 /* /////////////////////////////////////////////////////////////////////////////// */
@@ -178,6 +227,7 @@ section {
   color: var(--primary-color);
   text-decoration-color: var(--secondary-color);
   margin-bottom: 1em;
+  padding-top: 50px;
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -188,11 +238,11 @@ section {
 .about-me-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+
 }
 
 .about-me-text {
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -296,7 +346,7 @@ section {
 .tech-stack-container img {
   max-height: 400px;
   width: auto;
-  border-radius: 10px;
+  border-radius: 0.5em;
   /* box-shadow: 4px 4px black; */
 }
 
@@ -306,7 +356,9 @@ section {
 
 .big-project {
   display: flex;
-  justify-content: baseline;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  align-items: center;
   margin-bottom: 2em;
   padding: 1em;
   transition: 250ms linear 150ms;
@@ -326,8 +378,8 @@ section {
 }
 
 .big-project img {
-  max-width: 30%;
-  height: auto;
+  max-width: 600px;
+  max-height: auto;
   border:var(--secondary-color) solid 2px;
   border-radius: 5px;
 }
@@ -487,6 +539,8 @@ align-items: center;
 }
 
 
+
+
 /* //////////////////////////////////////////////////////////////////////// */
 /* Up button */
 /* //////////////////////////////////////////////////////////////////////// */
@@ -516,22 +570,139 @@ align-items: center;
 /* Media queries */
 /* //////////////////////////////////////////////////////////////////////// */
 
-
-/* have a tablet one
-have one for phone */
-
-/* make the main margin em lower on smaller screens */
-
-
-/* just to give more space */
-/* .stack-container {
-  margin-bottom: 2em;
-} */
-
-/* .bit-project
-flex-wrap:/
+@media only screen and (max-width: 1000px) {
+  main {
+    margin: 0 3rem;
+  }
 
 
-/* .margin {
-  visibility: hidden;
- } */
+  /*  */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+  }
+
+  .menu ul {
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--third-color);
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    transition: none;
+    padding: 0.5em 1em;
+    /* padding: 0.25em; */
+  }
+
+  .menu li:hover, .menu li:hover {
+    transform: none;
+    background-color: var(--footer-color);
+  }
+
+  .menu.active-menu {
+    display: inline;
+  }
+
+
+  .banner {
+    margin: 0rem;
+    padding: 1rem;
+  }
+
+  .about-me-container {
+    flex-wrap: wrap;
+  }
+
+  .about-me-text {
+    padding: 0;
+    width: 100%;
+  }
+
+  .profile-pic img {
+    height: 250px;
+    margin: 0;
+  }
+
+  .tech-stack li {
+    font-size: 1em;
+    justify-content: start;
+  }
+
+  .tech-stack-container img {
+    max-height: auto;
+    width: 100%;
+    border-radius: 0.5em;
+  }
+
+  .big-project {
+    flex-wrap: wrap;
+  }
+
+  .big-project img {
+    margin-top: 1em;
+    max-width: 100%;
+  }
+
+  .small-project-container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-button button {
+    width: 75%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .banner-text {
+    margin-bottom: 3em;
+  }
+
+  main {
+    margin: 1rem;
+  }
+
+
+  #logo {
+    display: none;
+  }
+
+  #logo-small {
+    margin-left: 2.5em;
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  #logo {
+    margin-left: 0.5em;
+  }
+
+}
+
+@media only screen and (max-width: 1440px) {
+  .main {
+    margin: 0 3rem;
+  }
+
+  .big-project {
+    flex-wrap: wrap;
+  }
+
+  .big-project img {
+    margin: 1em;
+  }
+}
