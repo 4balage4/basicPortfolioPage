@@ -32,15 +32,19 @@ toggle.addEventListener('click', function() {
 // Back to top button
 // //////////////////////////////
 
-const button = document.querySelector('.back-to-top');
+const toTopButton = document.querySelector('.back-to-top');
 const navbar = document.querySelector('.navbar');
+const socialMedia = document.querySelector('.icons-container-vertical');
 
 window.addEventListener('scroll', function() {
-  if(this.window.scrollY > 180) {
-    button.classList.add('active');
+  if(this.window.scrollY > 500) {
+
+    toTopButton.classList.add('active');
+    socialMedia.classList.add('active');
     navbar.classList.add('after');
   } else {
-    button.classList.remove('active');
+    toTopButton.classList.remove('active');
+    socialMedia.classList.remove('active');
     navbar.classList.remove('after');
   }
 })
