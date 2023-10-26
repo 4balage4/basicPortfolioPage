@@ -354,7 +354,15 @@ section {
 /* PROJECTS */
 /* ///////////////////////////////////////////////////////////////////////////// */
 
+.carousel {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+
 .big-project {
+  position: absolute;
   display: flex;
   justify-content: center;
   /* flex-wrap: wrap; */
@@ -373,9 +381,9 @@ section {
 
 }
 
-.margin {
+/* .margin {
   margin-right: 2em;
-}
+} */
 
 .big-project img {
   max-width: 600px;
@@ -403,6 +411,10 @@ section {
   border-left: var(--secondary-color) solid medium;
 
 }
+
+/* ////////////////////////////////////////////////////////////// */
+/* small projects */
+/* ////////////////////////////////////////////////////////////// */
 
 
 .small-project-container {
@@ -515,6 +527,12 @@ footer {
   border-color: var(--secondary-color);
 }
 
+
+.carousel-button-left, .carousel-button-right {
+  position: absolute;
+  font-size: 7rem;
+  top: 50%;
+}
 
 .form-button {
 display: flex;
