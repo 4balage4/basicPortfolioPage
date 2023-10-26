@@ -566,6 +566,54 @@ align-items: center;
   color: var(--secondary-color);
 }
 
+
+/*/////////////////////////////////////////////////////////////////////////////////// */
+/* Icons vertical for social media */
+/* /////////////////////////////////////////////////////////////////////////////// */
+.icons-container-vertical {
+  display: grid;
+  grid-column: 1fr;
+}
+
+.icons-container-vertical.active {
+  position: fixed;
+  /* visibility: visible; */
+  display: grid;
+  grid-column: 1fr;
+  left: 1%;
+  top: 70vh;
+  /* width: ; */
+  min-height: 3.5em;
+  pointer-events: none;
+}
+
+/* .email-address {
+  writing-mode: vertical-rl;
+  text-decoration: none;
+} */
+
+
+
+/* .icons-container-vertical.active a  { */
+
+  /* } */
+
+  .icons-container-vertical.active a {
+    font-size: 1.5em;
+    padding: 0.75em;
+    transition: all 400ms ease-in-out;
+    pointer-events: auto;
+  }
+
+.icons-container-vertical.active a i:hover {
+  color: var(--secondary-color);
+}
+
+.icons-container-vertical.active a:hover {
+  transform: translateY(-5%);
+}
+
+
 /* //////////////////////////////////////////////////////////////////////// */
 /* Media queries */
 /* //////////////////////////////////////////////////////////////////////// */
@@ -689,6 +737,14 @@ align-items: center;
 
   #logo {
     margin-left: 0.5em;
+  }
+
+  .icons-container-vertical {
+    display: hidden;
+  }
+
+  .icons-container-vertical.active {
+    display: hidden;
   }
 
 }
