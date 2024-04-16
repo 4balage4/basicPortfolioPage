@@ -188,9 +188,14 @@ nav.logo a {
   /* padding-bottom: 3em; */
 }
 
+
+
 .banner-text {
   margin-bottom: 5em;
+
 }
+
+
 
 .banner h1 {
   color: var(--secondary-color);
@@ -563,18 +568,19 @@ footer {
   top: calc(var(--big-project) / 2 + 1.5rem);
   font-size: 2rem;
   z-index: 2;
-  opacity: 0.5;
+  opacity: 0.2;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
 .carousel-button.left {
-  left: 1rem;
+
+  left: -3rem;
 }
 
 .carousel-button.right {
-  right: 1rem;
+  right: -3rem;
 }
 
 

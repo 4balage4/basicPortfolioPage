@@ -70,17 +70,19 @@ smallNav.addEventListener('click', function() {
 // carousel ----> this was my first carousel
 // //////////////////////////////
 
+// underlying the project
+// const activeSlide = document.querySelector('[data-active]');
+
+
+
 /* choosing the carousel buttons */
 const carButtons = document.querySelectorAll('[data-carousel-button]')
-
 // adding event listerner to the buttons
 carButtons.forEach(button => {
   button.addEventListener('click', () => {
     // we are setting an offset. If we click on the button "next" then we return true so +1
     // if we click on other button, which is the back will return false, so we -1
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-
-    console.log(`offset: ${offset}`)
 
     const projects = button
     // getting all of the closest selectors. from the data carousel.
@@ -91,24 +93,27 @@ carButtons.forEach(button => {
     // which are the .big-projects.
       .querySelector("[data-slides")
 
+
+    // getting the 3 p tags as an array
+
     // getting the active slide from the "projects" variable.
     const activeSlide = projects.querySelector("[data-active]");
 
 
+    // getting the name of the project from activeSlide
+
+
+    // const activeSlideText = activeSlide
     // creating an array with all of the projects
     let newIndex = [...projects.children];
-
     // getting the index of that project which has the active slide.
     // searching with .indexOf(activeSlide).
     newIndex = newIndex.indexOf(activeSlide);
-
-    console.log(`activeSlide index: ${newIndex}`)
 
     // we are adding the offset. The offset will add one to the index we are at.
     //  so we are going +1 in the array.
     newIndex = newIndex + offset;
 
-    console.log(`newIndex: ${newIndex}`)
     // if the newIndex is smaller than 0 means we wanna go to our last image. So we go around.
     //  this happens when we click on the 'prev' when we are at index 0, and we want to go to the end of our array
     if (newIndex < 0) newIndex = projects.children.length - 1
@@ -122,7 +127,3 @@ carButtons.forEach(button => {
 
   })
 })
-
-
-
-// the dot coloring function
